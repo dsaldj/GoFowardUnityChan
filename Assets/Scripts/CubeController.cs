@@ -36,9 +36,8 @@ public class CubeController : MonoBehaviour {
     /// 地面、他のキューブ衝突時に音が出るように
     void OnCollisionEnter2D(Collision2D other) {
 
+        //Blockと地面にのみ衝突した際、音楽を鳴らす
         if (other.gameObject.tag == "BlockTag"|| other.gameObject.tag == "GroundTag") {
-            //ジャンプ状態の時はボリュームは0にする
-            audioSource.volume = 0.2f;
             audioSource.Play();
         }
     }
